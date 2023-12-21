@@ -1,20 +1,36 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-image: url(assets/fifa2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
 }
 
 table {
-    width: 100%;
+    width: 350px;
     border-collapse: collapse;
+    margin: 0 auto;
     margin-top: 20px;
 }
 
 th, td {
-    border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
 th {
     background-color: #f2f2f2;
+}
+
+td {
+    background-color: rgb(26, 80, 180);
+    max-width: 100px;
+}
+
+tr {
+    border: 1px solid #173596;
+}
+img {
+    width: 50px;
 }

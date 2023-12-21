@@ -3,111 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Chaveamento Mata-Mata</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
     <h2>Chaveamento Mata-Mata - Quartas de Finais</h2>
 
     <table>
-        <tr>
-            <th>Partida</th>
-            <th>Time 1</th>
-            <th>vs</th>
-            <th>Time 2</th>
-        </tr>
         <!-- Adicionando IDs para facilitar a manipulação com JavaScript -->
         <tr id="qf1">
-            <td>Leonardo e Gabriel</td>
-            <td id="time1-qf1"></td>
-            <td>vs</td>
-            <td id="time2-qf1"></td>
+            <td id="time1-qf1">
+                
+                <img id="img-time1-qf1" src="" alt="">
+            </td>
+            <td>Marlon vs Gabriel</td>
+            <td id="time2-qf1">
+                <img id="img-time2-qf1" src="" alt="">
+            </td>
         </tr>
         <tr id="qf2">
-            <td>Gabruel e Marlon</td>
-            <td id="time1-qf2"></td>
-            <td>vs</td>
-            <td id="time2-qf2"></td>
+            <td id="time1-qf2">
+                <img id="img-time1-qf2" src="" alt="">
+            </td>
+            <td>Leonardo vs Marlon</td>
+            <td id="time2-qf2">
+                <img id="img-time2-qf2" src="" alt="">
+            </td>
         </tr>
         <tr id="qf3">
-            <td>Marlon e Leonardo</td>
-            <td id="time1-qf3"></td>
-            <td>vs</td>
-            <td id="time2-qf3"></td>
+            <td id="time1-qf3">
+                <img id="img-time1-qf3" src="" alt="">
+            </td>
+            <td>Gabriel vs Leonardo</td>
+            <td id="time2-qf3">
+                <img id="img-time2-qf3" src="" alt="">
+            </td>
         </tr>
         <tr id="qf4">
-            <td>Quarta de Final 4</td>
-            <td id="time1-qf4"></td>
-            <td>vs</td>
-            <td id="time2-qf4"></td>
+            <td id="time1-qf4">
+                <img id="img-time1-qf4" src="" alt="">
+            </td>
+            <td><span class="jogador1"></span> vs <span class="jogador2"></span></td>
+            <td id="time2-qf4">
+                <img id="img-time2-qf4" src="" alt="">
+            </td>
         </tr>
         <tr id="qf5">
-            <td>Time de Fora</td>
-            <td id="time-fora"></td>
-            <td>vs</td>
+            <td></td>
+            <td id="time-fora">
+                <img id="img-time-fora" src="" alt="">
+            </td>
             <td></td>
         </tr>
+    </table>
 
-    <script>
-        const nomes = ["Barcelona", "PSG", "Atletico de Madrid", "Real Madrid", "Arsenal", "Bayer de Munique", "Man. City", "Inter de Milão", "Liverpool"];
-        const shuffledNomes = nomes.slice().sort(() => Math.random() - 0.5);
-        const nomesConfronto = ["Leonardo", "Gabriel", "Marlon"];
-        const shuffledNomesConfronto = nomesConfronto.slice().sort(() => Math.random() - 0.5);
-
-        // Substituir os textos nas tabelas HTML
-        document.getElementById('qf4').getElementsByTagName('td')[0].textContent = shuffledNomesConfronto[0] + ' vs ' + shuffledNomesConfronto[1];
-
-        function selecionarConfronto(nomes) {
-            const time1 = nomes.pop();
-            const time2 = nomes.pop();
-
-            return { time1, time2 };
-        }
-
-        const confrontos = [];
-
-        while (shuffledNomes.length >= 2) {
-            confrontos.push(selecionarConfronto(shuffledNomes));
-        }
-
-        // Exibir os nomes nas tabelas HTML
-        confrontos.forEach((confronto, i) => {
-            const partidaId = `qf${i + 1}`;
-            document.getElementById(`time1-${partidaId}`).textContent = confronto.time1;
-            document.getElementById(`time2-${partidaId}`).textContent = confronto.time2;
-        });
-
-        // Exibir o nome do time que fica de fora
-        if (shuffledNomes.length === 1) {
-            document.getElementById('time-fora').textContent = shuffledNomes[0];
-        }
-
-        // Exibir os nomes das semi-finais
-        document.getElementById('vencedor-qf1').textContent = confrontos[0].time1 || shuffledNomes[0];
-        document.getElementById('vencedor-qf2').textContent = confrontos[0].time2 || shuffledNomes[1];
-        document.getElementById('vencedor-qf3').textContent = confrontos[1].time1 || shuffledNomes[2];
-        document.getElementById('vencedor-qf4').textContent = confrontos[1].time2 || shuffledNomes[3];
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
